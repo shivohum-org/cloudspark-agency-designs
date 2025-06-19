@@ -7,6 +7,13 @@ interface HeroProps {
 }
 
 export const Hero = ({ scrollY }: HeroProps) => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div 
@@ -31,6 +38,7 @@ export const Hero = ({ scrollY }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
+              onClick={() => scrollToSection('contact')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg group transition-all duration-300 hover:scale-105"
             >
               Start Your AI Journey
@@ -40,6 +48,7 @@ export const Hero = ({ scrollY }: HeroProps) => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={() => scrollToSection('proof-of-work')}
               className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
             >
               View Our Work

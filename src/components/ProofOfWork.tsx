@@ -4,6 +4,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 export const ProofOfWork = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const projects = [
     {
       category: "Traditional Business",
@@ -98,6 +105,7 @@ export const ProofOfWork = () => {
             </p>
             <Button 
               size="lg"
+              onClick={() => scrollToSection('contact')}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
             >
               Start Your AI Project
