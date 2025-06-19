@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
 import { About } from '@/components/About';
-import { Testimonials } from '@/components/Testimonials';
 import { Contact } from '@/components/Contact';
 import { Navigation } from '@/components/Navigation';
 import { FloatingElements } from '@/components/FloatingElements';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -18,14 +18,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <div className="relative min-h-screen bg-white dark:bg-slate-900 overflow-hidden">
       <FloatingElements scrollY={scrollY} />
       <Navigation />
       <Hero scrollY={scrollY} />
       <Services />
       <About />
-      <Testimonials />
       <Contact />
+      <Footer />
     </div>
   );
 };
