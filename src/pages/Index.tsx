@@ -2,11 +2,13 @@
 import { useEffect, useState } from 'react';
 import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
+import { ProofOfWork } from '@/components/ProofOfWork';
 import { About } from '@/components/About';
 import { Testimonials } from '@/components/Testimonials';
 import { Contact } from '@/components/Contact';
 import { Navigation } from '@/components/Navigation';
 import { FloatingElements } from '@/components/FloatingElements';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -23,9 +25,11 @@ const Index = () => {
       <Navigation />
       <Hero scrollY={scrollY} />
       <Services />
+      <ProofOfWork />
       <About />
       <Testimonials />
       <Contact />
+      <Footer />
     </div>
   );
 };

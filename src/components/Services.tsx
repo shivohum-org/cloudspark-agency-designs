@@ -1,5 +1,5 @@
 
-import { Bot, Globe, Cog, Brain, Sparkles, TrendingUp } from 'lucide-react';
+import { Bot, Globe, Cog, Brain, Sparkles, TrendingUp, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 export const Services = () => {

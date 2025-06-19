@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -25,19 +25,41 @@ export const Contact = () => {
             <h3 className="text-2xl font-semibold text-white mb-8">Get In Touch</h3>
             
             <div className="space-y-6 mb-8">
-              {[
-                { icon: Mail, title: "Email", content: "hello@cloudcompany.ai" },
-                { icon: Phone, title: "Phone", content: "+1 (555) 123-4567" },
-                { icon: MapPin, title: "Location", content: "San Francisco, CA" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start">
-                  <item.icon className="h-6 w-6 text-blue-400 mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <div className="text-white font-semibold">{item.title}</div>
-                    <div className="text-gray-300">{item.content}</div>
-                  </div>
+              <div className="flex items-start">
+                <Mail className="h-6 w-6 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="text-white font-semibold">Email</div>
+                  <a 
+                    href="mailto:thecloudcompanyai@gmail.com" 
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    thecloudcompanyai@gmail.com
+                  </a>
                 </div>
-              ))}
+              </div>
+              
+              <div className="flex items-start">
+                <MessageCircle className="h-6 w-6 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="text-white font-semibold">WhatsApp</div>
+                  <a 
+                    href="https://wa.me/919026216173" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    +91 9026216173
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <MapPin className="h-6 w-6 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="text-white font-semibold">Location</div>
+                  <div className="text-gray-300">India</div>
+                </div>
+              </div>
             </div>
             
             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl p-6">
@@ -92,12 +114,6 @@ export const Contact = () => {
               </form>
             </CardContent>
           </Card>
-        </div>
-        
-        <div className="text-center mt-16 pt-8 border-t border-white/10">
-          <p className="text-gray-400">
-            © 2024 Cloud Company AI. All rights reserved. Building the future, one AI solution at a time.
-          </p>
         </div>
       </div>
     </section>
