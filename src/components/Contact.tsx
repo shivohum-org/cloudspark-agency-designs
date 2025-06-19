@@ -1,90 +1,103 @@
 
-import { Mail, Phone, MessageSquare, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-            Ready to Build Your 
-            <span className="block text-yellow-300">AI Tool?</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-2xl text-blue-100 max-w-4xl mx-auto font-medium">
-            Let's build something amazing together. Book a call or message us directly.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Let's discuss how AI can revolutionize your operations. Get in touch for a free consultation.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {[
-            { 
-              icon: Calendar, 
-              title: "Book a Call", 
-              description: "15-min strategy session",
-              action: "Schedule Now",
-              highlight: true
-            },
-            { 
-              icon: MessageSquare, 
-              title: "WhatsApp", 
-              description: "Quick questions & demos",
-              action: "Message Us"
-            },
-            { 
-              icon: Mail, 
-              title: "Email", 
-              description: "hello@cloudcompany.ai",
-              action: "Send Email"
-            },
-            { 
-              icon: Phone, 
-              title: "Call Direct", 
-              description: "+1 (555) 123-4567",
-              action: "Call Now"
-            }
-          ].map((contact, index) => (
-            <Card 
-              key={index}
-              className={`${contact.highlight ? 'bg-white border-4 border-yellow-300 scale-105' : 'bg-white/90 border-white/20'} hover:scale-110 transition-all duration-300 rounded-3xl overflow-hidden`}
-            >
-              <CardContent className="p-8 text-center">
-                <div className={`w-16 h-16 ${contact.highlight ? 'bg-gradient-to-r from-blue-600 to-purple-600' : 'bg-slate-200'} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                  <contact.icon className={`h-8 w-8 ${contact.highlight ? 'text-white' : 'text-slate-600'}`} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-2xl font-semibold text-white mb-8">Get In Touch</h3>
+            
+            <div className="space-y-6 mb-8">
+              {[
+                { icon: Mail, title: "Email", content: "hello@cloudcompany.ai" },
+                { icon: Phone, title: "Phone", content: "+1 (555) 123-4567" },
+                { icon: MapPin, title: "Location", content: "San Francisco, CA" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-start">
+                  <item.icon className="h-6 w-6 text-blue-400 mr-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="text-white font-semibold">{item.title}</div>
+                    <div className="text-gray-300">{item.content}</div>
+                  </div>
                 </div>
-                <h3 className={`text-xl font-bold mb-2 ${contact.highlight ? 'text-blue-600' : 'text-slate-900'}`}>
-                  {contact.title}
-                </h3>
-                <p className="text-slate-600 mb-4">{contact.description}</p>
-                <Button 
-                  className={`w-full ${contact.highlight ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : 'bg-slate-900 text-white'} font-bold py-3 rounded-xl hover:scale-105 transition-all duration-300`}
-                >
-                  {contact.action}
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        
-        <div className="text-center">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-            <h3 className="text-3xl font-bold text-white mb-4">What Happens Next?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
-              <div>
-                <div className="text-4xl font-bold text-yellow-300 mb-2">1</div>
-                <p className="text-lg">We understand your business & goals</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-yellow-300 mb-2">2</div>
-                <p className="text-lg">We design & build your AI tool</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-yellow-300 mb-2">3</div>
-                <p className="text-lg">You see real results in weeks</p>
-              </div>
+              ))}
+            </div>
+            
+            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl p-6">
+              <h4 className="text-white font-semibold mb-2">Why Work With Us?</h4>
+              <ul className="text-gray-300 space-y-2">
+                <li>• Free initial consultation</li>
+                <li>• Custom AI strategy development</li>
+                <li>• Proven results and ROI</li>
+                <li>• Ongoing support and optimization</li>
+              </ul>
             </div>
           </div>
+          
+          <Card className="bg-white/5 backdrop-blur-md border-white/10">
+            <CardContent className="p-8">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input 
+                    placeholder="First Name" 
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                  />
+                  <Input 
+                    placeholder="Last Name" 
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                  />
+                </div>
+                
+                <Input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                />
+                
+                <Input 
+                  placeholder="Company Name" 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
+                />
+                
+                <Textarea 
+                  placeholder="Tell us about your project and AI needs..." 
+                  rows={5}
+                  className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 resize-none"
+                />
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 group transition-all duration-300 hover:scale-105"
+                >
+                  Send Message
+                  <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="text-center mt-16 pt-8 border-t border-white/10">
+          <p className="text-gray-400">
+            © 2024 Cloud Company AI. All rights reserved. Building the future, one AI solution at a time.
+          </p>
         </div>
       </div>
     </section>

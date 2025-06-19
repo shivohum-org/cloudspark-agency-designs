@@ -1,5 +1,5 @@
 
-import { ArrowRight, Bot, Play } from 'lucide-react';
+import { ArrowRight, Bot, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface HeroProps {
@@ -10,55 +10,64 @@ export const Hero = ({ scrollY }: HeroProps) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-purple-900 transform"
-        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 transform"
+        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
       />
       
-      <div className="relative z-10 text-center max-w-6xl mx-auto">
+      <div className="relative z-10 text-center max-w-5xl mx-auto">
         <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-black text-slate-900 dark:text-white mb-8 leading-tight tracking-tight">
-            We Build Real 
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block">
-              AI Tools
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Build the Future with
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block">
+              AI-Powered Solutions
             </span>
-            for Real Businesses
           </h1>
           
-          <p className="text-2xl md:text-3xl text-slate-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto font-medium">
-            Want an AI bot or automation like this? We built it. 
-            <br className="hidden md:block" />
-            <span className="text-blue-600 dark:text-blue-400 font-bold">We can build yours too.</span>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            We help businesses transform with cutting-edge AI websites, intelligent chatbots, 
+            and powerful automations that drive growth and efficiency.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-xl font-bold rounded-2xl group transition-all duration-300 hover:scale-105 shadow-xl"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg group transition-all duration-300 hover:scale-105"
             >
-              <Bot className="mr-3 h-6 w-6" />
-              Try Our Bots
-              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+              Start Your AI Journey
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg"
-              className="border-3 border-slate-900 dark:border-white text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 px-12 py-6 text-xl font-bold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg"
+              className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
             >
-              <Play className="mr-3 h-6 w-6" />
-              Book a Build
+              View Our Work
             </Button>
           </div>
           
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-slate-200 dark:border-slate-700">
-            <p className="text-lg text-slate-600 dark:text-slate-300 font-medium">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span> Real demos below
-              <span className="mx-4">•</span>
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span> No fluff, just results
-              <span className="mx-4">•</span>
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span> Built for businesses like yours
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              { icon: Bot, title: "AI Chatbots", desc: "Intelligent customer support" },
+              { icon: Code, title: "AI Websites", desc: "Smart, responsive platforms" },
+              { icon: Zap, title: "Automations", desc: "Streamlined workflows" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="bg-white/10 backdrop-blur-md rounded-xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 group"
+              >
+                <item.icon className="h-12 w-12 text-blue-400 mb-4 mx-auto group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-300">{item.desc}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </div>
+      
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
