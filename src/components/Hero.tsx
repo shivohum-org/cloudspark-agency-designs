@@ -23,15 +23,6 @@ export const Hero = ({ scrollY }: HeroProps) => {
       
       <div className="relative z-10 text-center max-w-5xl mx-auto">
         <div className="animate-fade-in">
-          {/* Mascot Image */}
-          <div className="mb-8 flex justify-center">
-            <img 
-              src="/lovable-uploads/fbd2e3dd-9583-43a8-a77f-a8015f293f65.png" 
-              alt="Cloud Company AI Mascot" 
-              className="w-32 h-32 md:w-48 md:h-48 object-contain animate-float hover:scale-110 transition-transform duration-300"
-            />
-          </div>
-
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Build the Future with
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block">
